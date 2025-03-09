@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SubscriptionOptionsComponent } from './subscription/subscription-options/subscription-options.component';
-import { UserDetailsComponent } from './user/user-details/user-details.component';
-import { PaymentDetailsComponent } from './payment/payment-details/payment-details.component';
 
 const routes: Routes = [
-  { path: '', component: SubscriptionOptionsComponent },
-  { path: 'user', component: UserDetailsComponent },
-  { path: 'payment', component: PaymentDetailsComponent },
-  { path: '**', redirectTo: '' }
+  {
+    path: '',
+    loadChildren: () => import('./subscription/subscription.module').then(m => m.SubscriptionModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule)
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({

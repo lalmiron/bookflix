@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { SubscriptionModule } from './subscription/subscription.module';
 import { UserModule } from './user/user.module';
 import { PaymentModule } from './payment/payment.module';
 
@@ -13,7 +12,6 @@ import { PaymentModule } from './payment/payment.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    SubscriptionModule,
     UserModule,
     PaymentModule
   ],

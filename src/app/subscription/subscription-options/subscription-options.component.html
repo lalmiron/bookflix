@@ -1,1 +1,12 @@
-<p>subscription-options works!</p>
+<section class="container mt-4">
+    <h2 class="text-center">Elegi tu Box</h2>
+    <div class="row mt-3">
+      <div class="col-md-4" *ngFor="let plan of plans">
+        <div class="card p-3 text-center">
+          <h3>{{ plan.name }}</h3>
+          <p>{{ plan.description }}</p>
+          <button class="btn btn-primary w-100" (click)="selectSubscription(plan.id)">Select</button>
+        </div>
+      </div>
+    </div>
+  </section>
