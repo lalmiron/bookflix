@@ -7,9 +7,10 @@ import { UserModule } from './user/user.module';
 import { PaymentModule } from './payment/payment.module';
 import { NgbModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { FaqComponent } from './faq/faq.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 @NgModule({
-  declarations: [AppComponent, FaqComponent],
+  declarations: [AppComponent, FaqComponent, ReviewsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

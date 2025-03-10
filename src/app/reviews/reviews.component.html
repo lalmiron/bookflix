@@ -1,0 +1,15 @@
+<div class="reviews-container d-flex align-items-center justify-content-between">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let review of reviews">
+        <div class="review-card">
+          <img [src]="review.image" alt="{{ review.name }}" class="review-img">
+          <div class="stars">
+            <span *ngFor="let star of [].constructor(review.rating)">★</span>
+            <span *ngFor="let star of [].constructor(5 - review.rating)">☆</span>
+          </div>
+          <h3>{{ review.name }} {{ review.age }} años</h3>
+          <p>{{ review.comment }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
