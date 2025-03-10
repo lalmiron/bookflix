@@ -1,0 +1,31 @@
+.faq-container {
+    background-color: #E6A840; 
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+ngb-accordion {
+    width: 100%;
+}
+
+ngb-panel {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+ngb-panel .card-header {
+    background-color: transparent !important;
+    font-weight: bold;
+    border-bottom: none !important;
+    color: black;
+}
+
+ngb-panel .card-body {
+    background-color: transparent !important;
+    color: black;
+}
+
+ul {
+    padding-left: 20px;
+}
