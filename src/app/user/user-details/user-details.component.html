@@ -1,4 +1,8 @@
 <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="btn-close" (click)="activeModal.dismiss()">&times;</button>
+    </div>
+
     <div class="modal-body">
         <form (ngSubmit)="onNext()" class="mt-3">
         <label>Nombre:</label>

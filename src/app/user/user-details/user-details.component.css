@@ -9,7 +9,7 @@
 .modal-header {
     border-bottom: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -19,6 +19,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    max-width: 30px;
 }
 
 .modal-header .btn-close:hover {
