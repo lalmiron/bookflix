@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-user-details',
@@ -7,31 +7,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent {
-  user = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    address: ''
-  };
 
-  constructor(private router: Router) {}
+  @Input() subscriptionId: number | null = null;
+  user = {  firstName: '', lastName: '', email: '', address: '' };
+  showToast: boolean = false; // Controla la visibilidad del toast
 
-  /**
-   * Función que se ejecuta cuando el usuario envía el formulario
-   */
-  onNext(): void {
+  constructor(public activeModal: NgbActiveModal) {}
+
+  onNext() {
     if (this.isFormValid()) {
-      console.log('User Details:', this.user);
-      this.router.navigate(['/payment']); // Redirige al formulario de pago
+      this.showToast = true;
+
+      setTimeout(() => {
+        this.showToast = false;
+        this.activeModal.close(); 
+      }, 3000);
     } else {
-      alert('Please fill in all fields.');
+      alert('Por favor, complete todos los campos.');
     }
   }
 
-  /**
-   * Valida si todos los campos del formulario están llenos
-   */
   private isFormValid(): boolean {
+    console.log(this.user);
     return Object.values(this.user).every(field => field.trim() !== '');
   }
 }

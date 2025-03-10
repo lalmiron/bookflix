@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { PaymentModule } from './payment/payment.module';
+import { NgbModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +14,9 @@ import { PaymentModule } from './payment/payment.module';
     AppRoutingModule,
     CoreModule,
     UserModule,
-    PaymentModule
+    PaymentModule,
+    NgbModule, 
+    NgbToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserDetailsComponent } from '../../user/user-details/user-details.component';
 
 @Component({
   selector: 'app-subscription-options',
@@ -7,16 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./subscription-options.component.css']
 })
 export class SubscriptionOptionsComponent {
-  plans = [
-    { id: 'standard', name: 'Standard Box', description: 'Contiene 1 libro y stickers' },
-    { id: 'medium', name: 'Medium Box', description: 'Contiene 1 libro, stickers, lapicera, postal coleccionable y vela' },
-    { id: 'premium', name: 'Premium Box', description: 'Contiene 1 libro, stickers, lapicera, postal coleccionable, vela, cuaderno personalizado, review de lectura personalizada' }
+  
+  subscriptions = [
+    { id: 1, name: 'Opción 1', price: 20000, image: 'assets/img-box.jpg' },
+    { id: 2, name: 'Opción 2', price: 30000, image: 'assets/img-box.jpg' },
+    { id: 3, name: 'Opción 3', price: 50000, image: 'assets/img-box.jpg' }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private modalService: NgbModal) {}
 
-  selectSubscription(option: string) {
-    console.log('Selected:', option);
-    this.router.navigate(['/user']);
+  subscribe(id: number) {
+    const modalRef = this.modalService.open(UserDetailsComponent, { centered: true });
+    modalRef.componentInstance.subscriptionId = id; 
   }
 }

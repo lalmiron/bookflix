@@ -1,12 +1,10 @@
-<section class="container mt-4">
-    <h2 class="text-center">Elegi tu Box</h2>
-    <div class="row mt-3">
-      <div class="col-md-4" *ngFor="let plan of plans">
-        <div class="card p-3 text-center">
-          <h3>{{ plan.name }}</h3>
-          <p>{{ plan.description }}</p>
-          <button class="btn btn-primary w-100" (click)="selectSubscription(plan.id)">Select</button>
-        </div>
+<section class="subscription-container">
+    <div *ngFor="let sub of subscriptions" class="subscription-card">
+      <img [src]="sub.image" [alt]="sub.name">
+      <div class="card-content">
+        <button class="subscribe-btn" (click)="subscribe(sub.id)">Suscribirse</button>
+        <h3>{{ sub.name }}</h3>
+        <p class="price">Precio: ${{ sub.price }}</p>
       </div>
     </div>
   </section>
