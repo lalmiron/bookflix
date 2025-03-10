@@ -10,7 +10,7 @@ export class UserDetailsComponent {
 
   @Input() subscriptionId: number | null = null;
   user = {  firstName: '', lastName: '', email: '', address: '' };
-  showToast: boolean = false; // Controla la visibilidad del toast
+  showToast: boolean = false; 
 
   constructor(public activeModal: NgbActiveModal) {}
 
