@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -11,8 +12,18 @@ export class UserDetailsComponent {
   @Input() subscriptionId: number | null = null;
   user = {  firstName: '', lastName: '', email: '', address: '' };
   showToast: boolean = false; 
-
-  constructor(public activeModal: NgbActiveModal) {}
+  userForm: UntypedFormGroup;
+  
+  constructor(public activeModal: NgbActiveModal,
+    private formBuilder: UntypedFormBuilder
+  ) {
+    this.userForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators],
+      email: ['', Validators],
+      address: ['', Validators.required]
+    });
+  }
 
   onNext() {
     if (this.isFormValid()) {
