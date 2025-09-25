@@ -8,6 +8,7 @@ import { PaymentModule } from './payment/payment.module';
 import { NgbModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { FaqComponent } from './faq/faq.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, FaqComponent, ReviewsComponent],
