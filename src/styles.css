@@ -13,3 +13,10 @@ body {
 button {
     cursor: pointer;
 }
+
+:root { --nav-h: 72px; } 
+@media (min-width: 992px) { :root { --nav-h: 80px; } }
+
+html { scroll-behavior: smooth; }
+
+section[id] { scroll-margin-top: var(--nav-h); }
