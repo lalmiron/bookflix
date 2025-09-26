@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  appNinjasKey: 'QUOTE_PROD'
 };
