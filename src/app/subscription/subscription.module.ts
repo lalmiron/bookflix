@@ -11,7 +11,9 @@ import { SubscriptionOptionsComponent } from './subscription-options/subscriptio
   ],
   imports: [
     CommonModule,
-    SubscriptionRoutingModule
+  ],
+  exports: [
+    SubscriptionOptionsComponent
   ]
 })
 export class SubscriptionModule { }
