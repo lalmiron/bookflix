@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
+  isCollapsed = true;
 
-  constructor() { }
+  toggleNav() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 
-  ngOnInit(): void {
+  closeNav() {
+    this.isCollapsed = true;
   }
 
 }
