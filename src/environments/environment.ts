@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  appNinjasKey: 'QUOTE'
+  apiNinjasKey: 'LeOuS7vn2sMTJEjBPkqZ1g==rNXooW5x5PvQb7OL'
 };
 
 /*

@@ -1,1 +1,45 @@
-<p>quotes works!</p>
+<section id="quotes" class="quotes-section text-white">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="mb-4 fw-semibold text-center title">Frase del día</h2>
+
+        <div class="text-center mb-4">
+          <button
+            class="btn btn-light btn-lg shadow"
+            (click)="getQuote()"
+            [disabled]="loading"
+          >
+            <span *ngIf="!loading">Tu frase del día es…</span>
+            <span
+              *ngIf="loading"
+              class="d-inline-flex align-items-center gap-2"
+            >
+              <span
+                class="spinner-border spinner-border-sm"
+                role="status"
+              ></span>
+              Buscando…
+            </span>
+          </button>
+        </div>
+
+        <div *ngIf="quote" class="card quote-card shadow border-0">
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p class="quote-text">“{{ quote.quote }}”</p>
+              <footer class="blockquote-footer text-end text-white-50 mt-2">
+                — {{ quote.author }}
+                <span *ngIf="quote.category">· {{ quote.category }}</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div *ngIf="error" class="alert alert-warning mt-3 text-center">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -20,7 +20,7 @@ export class QuoteService {
   constructor(private http: HttpClient) {}
 
   getRandomQuote(category?: string): Observable<ApiQuote[]> {
-    const headers = new HttpHeaders({ 'X-Api-Key': environment.appNinjasKey });
+    const headers = new HttpHeaders({ 'X-Api-Key': environment.apiNinjasKey });
     return this.http.get<ApiQuote[]>(this.baseUrl, { headers });
   }
 }
