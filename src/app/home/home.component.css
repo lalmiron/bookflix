@@ -1,0 +1,6 @@
+:root { --nav-h: 72px; }
+html { scroll-behavior: smooth; }
+:target::before { content:""; display:block; height:var(--nav-h); margin-top:calc(-1 * var(--nav-h)); }
+
+.fade { opacity: 0; transition: opacity .35s ease-in-out; }
+.fade.show { opacity: 1; }
