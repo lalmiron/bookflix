@@ -9,8 +9,6 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class UserDetailsComponent{
 
-  @Input() subscriptionId: number | null = null;
-  user = {  firstName: '', lastName: '', email: '', address: '' };
   showToast: boolean = false; 
   userForm: FormGroup;
   
@@ -20,26 +18,21 @@ export class UserDetailsComponent{
     this.userForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
       address: ['', Validators.required]
     });
   }
 
   onNext() {
-    if (this.isFormValid()) {
+    if (this.userForm.invalid) {
+       this.userForm.markAllAsTouched();
+       return;
+      }
       this.showToast = true;
-
+      console.log(this.userForm.value);
       setTimeout(() => {
         this.showToast = false;
-        this.activeModal.close(); 
+        this.activeModal.close(this.userForm.value); 
       }, 3000);
-    } else {
-      alert('Por favor, complete todos los campos.');
     }
   }
-
-  private isFormValid(): boolean {
-    console.log(this.user);
-    return Object.values(this.user).every(field => field.trim() !== '');
-  }
-}
